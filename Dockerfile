@@ -4,7 +4,6 @@ MAINTAINER Yiqiu Jia <yiqiujia@hotmail.com>
 
 #RUN ldd --version
 #glibc2.12
-#RUN yum install glibc-headers 
 
 RUN yum update -y \
 	&& yum install -y initscripts net-tools vim*  curl wget unzip screen openssh-server git subversion locales \
