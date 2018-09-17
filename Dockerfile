@@ -7,11 +7,10 @@ MAINTAINER Yiqiu Jia <yiqiujia@hotmail.com>
 
 RUN yum update -y \
 	&& yum install -y initscripts net-tools vim*  curl wget unzip screen openssh-server git subversion locales \
-#	gcc-c++ make openssl-devel \
 #	&& yum groupinstall -y Chinese-support \
 	&& yum clean all
-RUN locale -a
-ENV LC_ALL zh_CN.UTF-8
+#RUN locale -a
+#ENV LC_ALL zh_CN.UTF-8
 #RUN sed -i 's/en_US.UTF-8/zh_CN.UTF-8/g' /etc/sysconfig/i18n
 
 RUN sed -i 's/#Port 22/Port 20022/g' /etc/ssh/sshd_config
