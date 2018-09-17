@@ -8,7 +8,7 @@ MAINTAINER Yiqiu Jia <yiqiujia@hotmail.com>
 RUN yum update -y \
 	&& yum install -y initscripts net-tools vim*  curl wget unzip screen openssh-server git subversion locales \
 #	gcc-c++ make openssl-devel \
-	&& yum groupinstall -y Chinese-support \
+	&& yum groupinstall -y "Chinese Support" \
 	&& yum clean all
 RUN locale -a
 ENV LC_ALL zh_CN.UTF-8
@@ -29,4 +29,4 @@ CMD /etc/init.d/sshd start && bash
 EXPOSE 20022/tcp
 
 
-#docker stop centos ; docker rm centos ; docker run -it --privileged -p 20000:20022 --name centos land007/centos:latest
+#docker stop centos ; docker rm centos ; docker run -it --privileged -p 20000:20022 --name centos 
